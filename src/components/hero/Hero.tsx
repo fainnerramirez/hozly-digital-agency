@@ -124,7 +124,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="lg:col-span-5 relative flex items-center justify-center"
+            className="lg:col-span-5 relative flex items-center justify-center self-center lg:-mt-20"
           >
             <HeroGeometricVisual />
           </motion.div>

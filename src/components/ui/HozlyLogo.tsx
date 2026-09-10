@@ -141,15 +141,17 @@ export default function HozlyLogo({
     </svg>
   );
 
+  const subTracking = size === "sm" ? "tracking-[0.18em]" : "tracking-[0.32em]";
+
   const Wordmark = (
-    <div className="flex flex-col select-none">
+    <div className="flex flex-col select-none min-w-0 overflow-hidden">
       <span
         className={`font-heading font-extrabold tracking-[0.14em] leading-none text-white transition-colors duration-300 ${textScale}`}
       >
         HOZLY
       </span>
       <span
-        className={`font-heading font-light tracking-[0.32em] text-[#B5B5B5] leading-none mt-1.5 uppercase transition-colors duration-300 ${subScale}`}
+        className={`font-heading font-light ${subTracking} text-[#B5B5B5] leading-none mt-1.5 uppercase transition-colors duration-300 ${subScale} truncate`}
       >
         AGENCIA DIGITAL
       </span>
@@ -157,7 +159,7 @@ export default function HozlyLogo({
   );
 
   const content = (
-    <div className={`group inline-flex items-center gap-3.5 ${className}`}>
+    <div className={`group inline-flex items-center gap-3.5 min-w-0 max-w-full ${className}`}>
       {variant === "symbol-only" && SymbolSVG}
 
       {variant === "wordmark" && Wordmark}
