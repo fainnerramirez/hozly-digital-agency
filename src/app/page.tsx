@@ -17,7 +17,7 @@ import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0A0A0A] text-white selection:bg-[#D4AF37] selection:text-[#0A0A0A]">
+    <div className="flex flex-col min-h-screen bg-[#0A0A0A] text-white selection:bg-[#D4AF37] selection:text-[#0A0A0A] overflow-x-hidden w-full max-w-full">
       {/* Dynamic Floating Navbar */}
       <Navbar />
 

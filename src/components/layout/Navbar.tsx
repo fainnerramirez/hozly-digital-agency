@@ -66,25 +66,34 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "py-3 md:py-4" : "py-6 md:py-8"
-        }`}
+        className={`fixed top-0 left-0 right-0 w-full max-w-full z-50 transition-all duration-500 ${isScrolled ? "py-2.5 sm:py-3 md:py-4" : "py-3.5 sm:py-5 md:py-8"
+          }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+        <div className="w-full max-w-7xl mx-auto px-3.5 sm:px-6 md:px-12">
           <nav
-            className={`flex items-center justify-between transition-all duration-500 rounded-full px-5 md:px-7 py-2.5 md:py-3 ${
-              isScrolled
-                ? "bg-[#1C1C1E]/85 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
-                : "bg-transparent border border-transparent"
-            }`}
+            className={`w-full flex items-center justify-between transition-all duration-500 rounded-full px-3.5 sm:px-5 md:px-7 py-2 sm:py-2.5 md:py-3 ${isScrolled
+              ? "bg-[#1C1C1E]/90 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
+              : "bg-[#1C1C1E]/50 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border border-white/10 md:border-transparent shadow-[0_4px_20px_rgba(0,0,0,0.3)] md:shadow-none"
+              }`}
           >
             {/* Brand Logo */}
-            <div className="flex items-center">
-              <HozlyLogo
-                variant="horizontal"
-                size={isScrolled ? "sm" : "md"}
-                colorMode="gold"
-              />
+            <div className="flex items-center shrink min-w-0">
+              {/* Desktop Logo */}
+              <div className="hidden sm:block">
+                <HozlyLogo
+                  variant="horizontal"
+                  size={isScrolled ? "sm" : "md"}
+                  colorMode="gold"
+                />
+              </div>
+              {/* Mobile Compact Logo */}
+              <div className="sm:hidden">
+                <HozlyLogo
+                  variant="horizontal"
+                  size="sm"
+                  colorMode="gold"
+                />
+              </div>
             </div>
 
             {/* Desktop Navigation Links */}
@@ -95,17 +104,15 @@ export default function Navbar() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className={`relative py-1 transition-colors duration-300 hover:text-white group ${
-                        isActive ? "text-[#D4AF37]" : "text-[#B5B5B5]"
-                      }`}
+                      className={`relative py-1 transition-colors duration-300 hover:text-white group ${isActive ? "text-[#D4AF37]" : "text-[#B5B5B5]"
+                        }`}
                     >
                       {link.name}
                       <span
-                        className={`absolute bottom-0 left-0 h-[2px] bg-[#D4AF37] transition-all duration-300 ${
-                          isActive
-                            ? "w-full shadow-[0_0_8px_#D4AF37]"
-                            : "w-0 group-hover:w-full"
-                        }`}
+                        className={`absolute bottom-0 left-0 h-[2px] bg-[#D4AF37] transition-all duration-300 ${isActive
+                          ? "w-full shadow-[0_0_8px_#D4AF37]"
+                          : "w-0 group-hover:w-full"
+                          }`}
                       />
                     </Link>
                   </li>
@@ -129,7 +136,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú de navegación"}
-              className="lg:hidden p-2.5 rounded-full bg-[#1C1C1E] border border-white/10 text-white hover:border-[#D4AF37]/50 transition-colors focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+              className="lg:hidden shrink-0 p-2 sm:p-2.5 rounded-full bg-[#1C1C1E] border border-white/10 text-white hover:border-[#D4AF37]/50 transition-colors focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
             >
               {mobileMenuOpen ? (
                 <X className="w-5 h-5 text-[#D4AF37]" />
@@ -149,7 +156,7 @@ export default function Navbar() {
             animate={{ opacity: 1, backdropFilter: "blur(24px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#0A0A0A]/95 lg:hidden flex flex-col justify-between px-7 py-24"
+            className="fixed inset-0 z-40 bg-[#0A0A0A]/95 lg:hidden flex flex-col justify-between px-6 sm:px-8 py-20 overflow-y-auto overflow-x-hidden max-w-full"
           >
             {/* Decorative Gold Radial Glow */}
             <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none" />

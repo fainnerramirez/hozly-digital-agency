@@ -38,10 +38,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#1C1C1E]/80 border border-[#D4AF37]/35 text-[#D4AF37] text-xs font-heading font-medium tracking-[0.22em] uppercase mb-6 md:mb-8"
+              className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#1C1C1E]/80 border border-[#D4AF37]/35 text-[#D4AF37] text-[10px] sm:text-xs font-heading font-medium tracking-[0.14em] sm:tracking-[0.22em] uppercase mb-6 md:mb-8 max-w-full overflow-hidden text-ellipsis whitespace-nowrap"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37] animate-pulse" />
-              <span>MARKETING · PUBLICIDAD · TECNOLOGÍA</span>
+              <Sparkles className="w-3.5 h-3.5 text-[#D4AF37] animate-pulse shrink-0" />
+              <span className="truncate">MARKETING · PUBLICIDAD · TECNOLOGÍA</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -49,7 +49,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight uppercase leading-[0.96] text-white"
+              className="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight uppercase leading-[0.96] text-white break-words max-w-full"
             >
               <h1>
                 <span className="block">IDEAS QUE</span>
